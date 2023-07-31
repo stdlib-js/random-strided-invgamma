@@ -24,38 +24,30 @@ limitations under the License.
 
 > Fill a strided array with pseudorandom numbers drawn from an [inverse gamma][@stdlib/random/base/invgamma] distribution.
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/random-strided-invgamma
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
+-   If you are using Deno, visit the [`deno` branch][deno-url].
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-invgamma = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/random-strided-invgamma@umd/browser.js' )
-```
-
-To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
-
-```javascript
-var invgamma = require( 'path/to/vendor/umd/random-strided-invgamma/index.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-strided-invgamma@umd/browser.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.invgamma;
-})();
-</script>
+var invgamma = require( '@stdlib/random-strided-invgamma' );
 ```
 
 #### invgamma( N, alpha, sa, beta, sb, out, so\[, options] )
@@ -197,16 +189,11 @@ The function accepts the same `options` as documented above for `invgamma()`.
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/array-zeros@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/array-base-zero-to@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/console-log-each@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-strided-invgamma@umd/browser.js"></script>
-<script type="text/javascript">
-(function () {
+```javascript
+var zeros = require( '@stdlib/array-zeros' );
+var zeroTo = require( '@stdlib/array-base-zero-to' );
+var logEach = require( '@stdlib/console-log-each' );
+var invgamma = require( '@stdlib/random-strided-invgamma' );
 
 // Specify a PRNG seed:
 var opts = {
@@ -230,11 +217,6 @@ invgamma( x2.length, [ 2.0 ], 0, [ 5.0 ], 0, x2, 1, opts );
 
 // Print the array contents:
 logEach( 'x1[%d] = %.2f; x2[%d] = %.2f', idx, x1, idx, x2 );
-
-})();
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -288,8 +270,8 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 [npm-image]: http://img.shields.io/npm/v/@stdlib/random-strided-invgamma.svg
 [npm-url]: https://npmjs.org/package/@stdlib/random-strided-invgamma
 
-[test-image]: https://github.com/stdlib-js/random-strided-invgamma/actions/workflows/test.yml/badge.svg?branch=main
-[test-url]: https://github.com/stdlib-js/random-strided-invgamma/actions/workflows/test.yml?query=branch:main
+[test-image]: https://github.com/stdlib-js/random-strided-invgamma/actions/workflows/test.yml/badge.svg?branch=v0.0.1
+[test-url]: https://github.com/stdlib-js/random-strided-invgamma/actions/workflows/test.yml?query=branch:v0.0.1
 
 [coverage-image]: https://img.shields.io/codecov/c/github/stdlib-js/random-strided-invgamma/main.svg
 [coverage-url]: https://codecov.io/github/stdlib-js/random-strided-invgamma?branch=main
@@ -320,9 +302,9 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 
 [mdn-typed-array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray
 
-[@stdlib/random/base/invgamma]: https://github.com/stdlib-js/random-base-invgamma/tree/umd
+[@stdlib/random/base/invgamma]: https://github.com/stdlib-js/random-base-invgamma
 
-[@stdlib/array/uint32]: https://github.com/stdlib-js/array-uint32/tree/umd
+[@stdlib/array/uint32]: https://github.com/stdlib-js/array-uint32
 
 </section>
 
