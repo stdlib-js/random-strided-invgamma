@@ -24,25 +24,30 @@ limitations under the License.
 
 > Fill a strided array with pseudorandom numbers drawn from an [inverse gamma][@stdlib/random/base/invgamma] distribution.
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/random-strided-invgamma
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
+-   If you are using Deno, visit the [`deno` branch][deno-url].
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import invgamma from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-strided-invgamma@deno/mod.js';
-```
-The previous example will load the latest bundled code from the deno branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/random-strided-invgamma/tags). For example,
-
-```javascript
-import invgamma from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-strided-invgamma@v0.0.1-deno/mod.js';
-```
-
-You can also import the following named exports from the package:
-
-```javascript
-import { ndarray } from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-strided-invgamma@deno/mod.js';
+var invgamma = require( '@stdlib/random-strided-invgamma' );
 ```
 
 #### invgamma( N, alpha, sa, beta, sb, out, so\[, options] )
@@ -50,7 +55,7 @@ import { ndarray } from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-strided-in
 Fills a strided array with pseudorandom numbers drawn from an [inverse gamma][@stdlib/random/base/invgamma] distribution.
 
 ```javascript
-import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@deno/mod.js';
+var Float64Array = require( '@stdlib/array-float64' );
 
 // Create an array:
 var out = new Float64Array( 10 );
@@ -82,7 +87,7 @@ Note that indexing is relative to the first index. To introduce an offset, use [
 <!-- eslint-disable stdlib/capitalized-comments -->
 
 ```javascript
-import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@deno/mod.js';
+var Float64Array = require( '@stdlib/array-float64' );
 
 // Initial arrays...
 var alpha0 = new Float64Array( [ 0.0, 0.0, 0.0, 2.0, 2.0, 2.0 ] );
@@ -109,8 +114,8 @@ The function accepts the following `options`:
 To use a custom PRNG as the underlying source of uniformly distributed pseudorandom numbers, set the `prng` option.
 
 ```javascript
-import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@deno/mod.js';
-import minstd from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-minstd@deno/mod.js';
+var Float64Array = require( '@stdlib/array-float64' );
+var minstd = require( '@stdlib/random-base-minstd' );
 
 var opts = {
     'prng': minstd.normalized
@@ -123,7 +128,7 @@ invgamma( out.length, [ 2.0 ], 0, [ 5.0 ], 0, out, 1, opts );
 To seed the underlying pseudorandom number generator, set the `seed` option.
 
 ```javascript
-import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@deno/mod.js';
+var Float64Array = require( '@stdlib/array-float64' );
 
 var opts = {
     'seed': 12345
@@ -138,7 +143,7 @@ invgamma( out.length, [ 2.0 ], 0, [ 5.0 ], 0, out, 1, opts );
 Fills a strided array with pseudorandom numbers drawn from a [inverse gamma][@stdlib/random/base/invgamma] distribution using alternative indexing semantics.
 
 ```javascript
-import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@deno/mod.js';
+var Float64Array = require( '@stdlib/array-float64' );
 
 // Create an array:
 var out = new Float64Array( 10 );
@@ -185,10 +190,10 @@ The function accepts the same `options` as documented above for `invgamma()`.
 <!-- eslint no-undef: "error" -->
 
 ```javascript
-import zeros from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-zeros@deno/mod.js';
-import zeroTo from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-zero-to@deno/mod.js';
-import logEach from 'https://cdn.jsdelivr.net/gh/stdlib-js/console-log-each@deno/mod.js';
-import invgamma from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-strided-invgamma@deno/mod.js';
+var zeros = require( '@stdlib/array-zeros' );
+var zeroTo = require( '@stdlib/array-base-zero-to' );
+var logEach = require( '@stdlib/console-log-each' );
+var invgamma = require( '@stdlib/random-strided-invgamma' );
 
 // Specify a PRNG seed:
 var opts = {
@@ -235,7 +240,7 @@ logEach( 'x1[%d] = %.2f; x2[%d] = %.2f', idx, x1, idx, x2 );
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -265,8 +270,8 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 [npm-image]: http://img.shields.io/npm/v/@stdlib/random-strided-invgamma.svg
 [npm-url]: https://npmjs.org/package/@stdlib/random-strided-invgamma
 
-[test-image]: https://github.com/stdlib-js/random-strided-invgamma/actions/workflows/test.yml/badge.svg?branch=v0.0.1
-[test-url]: https://github.com/stdlib-js/random-strided-invgamma/actions/workflows/test.yml?query=branch:v0.0.1
+[test-image]: https://github.com/stdlib-js/random-strided-invgamma/actions/workflows/test.yml/badge.svg?branch=main
+[test-url]: https://github.com/stdlib-js/random-strided-invgamma/actions/workflows/test.yml?query=branch:main
 
 [coverage-image]: https://img.shields.io/codecov/c/github/stdlib-js/random-strided-invgamma/main.svg
 [coverage-url]: https://codecov.io/github/stdlib-js/random-strided-invgamma?branch=main
@@ -297,9 +302,9 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 
 [mdn-typed-array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray
 
-[@stdlib/random/base/invgamma]: https://github.com/stdlib-js/random-base-invgamma/tree/deno
+[@stdlib/random/base/invgamma]: https://github.com/stdlib-js/random-base-invgamma
 
-[@stdlib/array/uint32]: https://github.com/stdlib-js/array-uint32/tree/deno
+[@stdlib/array/uint32]: https://github.com/stdlib-js/array-uint32
 
 </section>
 
